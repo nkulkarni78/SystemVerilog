@@ -1,0 +1,6 @@
+DVEfiles/
+opendatabase.log
+simv*
+csrc/
+*.vpd
+ucli.key
