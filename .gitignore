@@ -4,3 +4,5 @@ simv*
 csrc/
 *.vpd
 ucli.key
+project_1/
+vivado*
