@@ -4,7 +4,7 @@
 //le line statement.
 
 module randarray;
-  reg a[15]='{default:0},b[15]='{default:0};
+  int a[15]='{default:0},b[15]='{default:0};
   initial
   begin
   foreach(a[i])
