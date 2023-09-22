@@ -1,0 +1,27 @@
+$date
+	Thu Sep 21 23:10:08 2023
+$end
+
+$version
+	Synopsys VCS version Q-2020.03-SP1-1_Full64
+$end
+
+$timescale
+	1s
+$end
+
+$comment Csum: 1 c3902c6f0e8655e8 $end
+
+
+$scope module top $end
+
+$scope begin unnamed$$_vcs_3 $end
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+
+#0
+$dumpvars
+$end
