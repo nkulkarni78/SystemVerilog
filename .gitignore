@@ -7,3 +7,4 @@ ucli.key
 project_1/
 vivado*
 *.vcd
+*.log
