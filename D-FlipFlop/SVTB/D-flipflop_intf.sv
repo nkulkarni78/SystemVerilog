@@ -1,6 +1,6 @@
 interface d_intf();
-  logic tb_reset;
-  logic [3:0]tb_d;
-  logic [3:0]tb_q;
+  logic reset;
+  logic [3:0]d;
+  logic [3:0]q;
   logic clock;
 endinterface
