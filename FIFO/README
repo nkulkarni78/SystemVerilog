@@ -1,0 +1,15 @@
+This repository contains synchronous FIFO design and complete test bench environment
+developed in three stages. Design remains the same while the testbench approach kept
+changing. First stage is with simple design and testbench with vcd files. Second one
+is to add a selfchecking testbench and run dut. Third stage consists of class based
+approach for complete system verilog test bench environment. The files are described
+as below:
+
+design.sv
+Verilog Design file for Synchronous FIFO
+
+selfchecking_tb.sv
+selfchecking program block based testbench for DUT
+
+top.sv
+top file for DUT and program based testbench
