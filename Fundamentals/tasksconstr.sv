@@ -3,28 +3,21 @@
 //given inputs. Task should also print results to console.
 
 class task2const;
-  bit [3:0]a,b,c;
-  bit [4:0]sum;
-  function new(input bit [3:0]a=0,b=0,c=0,output bit [4:0]sum);
-    this.a=a;
-    this.b=b;
-    this.c=c;
-    this.sum=sum;
-  endfunction
+  // bit [3:0]a,b,c;
+  // bit [4:0]sum;
 
-  task summation();
-    $display("a=%0d b=%0d c=%0d",a,b,c);
+  task summation(input [3:0]a,b,c, output[4:0]sum);
     sum = a+b+c;
+    $display("a=%0d b=%0d c=%0d, sum=%0d",a,b,c,sum);
   endtask
 endclass
 
 module tb;
-  bit[4:0]s;
+  bit [4:0] sum;
   task2const tc;
   initial
   begin
-    tc=new(.a(1),.b(2),.c(4),.sum(s));
-    tc.summation();
-    $display("%0d",tc.sum);
+    tc=new();
+    tc.summation(1,2,4, sum);
   end
 endmodule
