@@ -1,67 +1,53 @@
-//This is environment class which will contain all objects 
-//of SV testbench for FIFO design.
-
-class env;
+class environment;
   generator gen;
-  driver dr;
-
+  driver dri;
   monitor mon;
   scoreboard sco;
-
-  //mailbox to retrieve data from generator to driver class
-  //to drive stimulus into DUT once generator randomizes
-  mailbox #(transaction) gdmbx;
-  mailbox #(transaction) msmbx;
-
-  event nextgs;
-
-  virtual ifc fifo_itfc;
-
-  //function to create objects of all the class instance in
-  //testbench environment
-  function new(virtual ifc fifo_itfc);
-    gdmbx = new();
-    gen = new(gdmbx);
-    dr = new(gdmbx);
-
-    msmbx = new();
-    mon = new(msmbx);
-    sco = new(msmbx);
-
-    this.fifo_itfc =  fifo_itfc;
-
-    dr.fifo_itfc = this.fifo_itfc;
-    mon.fifo_itfc = this.fifo_itfc;
-
-    gen.next = nextgs;
-    sco.next = nextgs;
+  mailbox #(transaction) gen_dri_mbx;
+  mailbox #(transaction) mon_sco_mbx;
+  event next_test;
+  virtual FIFO_Intf intf;
+  
+  function new(virtual FIFO_Intf intf);
+    gen_dri_mbx = new();
+    mon_sco_mbx = new();
+    gen = new(gen_dri_mbx);
+    dri = new(gen_dri_mbx);
+    mon = new(mon_sco_mbx);
+    sco = new(mon_sco_mbx);
+    this.intf = intf;
+    dri.drv_dut_if = this.intf;
+    mon.dut_mon_if = this.intf;
+    gen.next = next_test;
+    sco.next = next_test;
   endfunction
-
-  //reset DUT using pre_test task
+  
   task pre_test();
-    dr.reset();
-  endtask
-
-  //start the test
+    dri.reset();
+  endtask: pre_test
+  
   task test();
     fork
       gen.run();
-      dr.run();
+      dri.run();
       mon.run();
       sco.run();
     join_any
-  endtask
-
-  //end the test
+  endtask: test
+  
   task post_test();
     wait(gen.done.triggered);
+    $display("---------------------------------------------");
+    $display("[Time: %0t] Error Count: %0d", $time, sco.err);
+    $display("---------------------------------------------");
     $finish();
-  endtask
-
-  //Start the run
+  endtask: post_test
+    
+  
   task run();
     pre_test();
     test();
     post_test();
-  endtask
-endclass
+  endtask: run
+  
+endclass: environment

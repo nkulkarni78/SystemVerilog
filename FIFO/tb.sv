@@ -1,38 +1,31 @@
-//top module
+`include "interface.sv"
+`include "driver.sv"
+`include "monitor.sv"
+`include "scoreboard.sv"
+`include "env.sv"
 
 module top;
-  //interface declaration
-  ifc itfc();
-
-  //DUT instantiation
-  fifo dut(itfc.clock,
-           itfc.reset,
-           itfc.read_en,
-           itfc.write_en,
-           itfc.data_in,
-           itfc.data_out,
-           itfc.fifo_full,
-           itfc.fifo_empty);
-
+  FIFO_Intf intf();
+  fifo fifo_inst(.clock(intf.clock),
+                 .reset(intf.reset),
+                 .read_en(intf.read_en),
+                 .write_en(intf.write_en),
+                 .data_in(intf.data_in),
+                 .data_outp(intf.data_outp),
+                 .fifo_full(intf.fifo_full),
+                 .fifo_empty(intf.fifo_empty));
+  
+  initial intf.clock = 0;
+  
+  always #5 intf.clock = ~intf.clock;
+  
+  environment env;
+  
   initial
-  begin
-    itfc.clock <= 1'b0;
-  end
-
-  always #10 itfc.clock = ~itfc.clock;
-
-  env env_obj;
-
-  initial
-  begin
-    env_obj = new(itfc);
-    env_obj.gen.count = 20;
-    env_obj.run();
-  end 
-
-  initial
-  begin
-    $dumpfile("dump.vcd");
-    $dumpvars(0);
-  end
-endmodule
+    begin
+      env = new(intf);
+      env.gen.count = 20;
+      env.run();
+    end
+  
+endmodule: top
