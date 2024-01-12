@@ -19,6 +19,11 @@ top file for DUT and program based testbench
 
 
 ## Type-2 SVTB environment with Transaction object and simple OOP concepts
-
+Testbench transaction object generated from generator class is driven into DUT with
+interface connections. The synchronization between stimuli applied and output gener-
+ated from the DUT is manually obtained and is tedious task. Driver code is developed
+in order to achieve this synchronization. To avoid maintanence involved, third appr-
+oach based on clocking block and ref directions to avoid connection flow issues is
+created.
 
 ## Type-3 Complete SVTB environment with Mod-ports and Clocking Blocks
