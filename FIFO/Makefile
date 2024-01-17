@@ -7,5 +7,5 @@ type-2:
 	./simv
 
 type-3:
-	vcs -sverilog -full64 design.sv top_v3.sv
+	vcs -sverilog -full64 v3_design.sv v3_top.sv
 	./simv
