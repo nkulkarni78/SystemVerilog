@@ -27,3 +27,6 @@ oach based on clocking block and ref directions to avoid connection flow issues 
 created.
 
 ## Type-3 Complete SVTB environment with Mod-ports and Clocking Blocks
+This version of testbench contains clocking block to drive and sample inputs and out-
+puts in the environment. Due to clocking block design synchronization was clearer and
+amount of time required to verify entire design for given iterations is also reduced.
