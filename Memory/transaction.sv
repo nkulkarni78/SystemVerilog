@@ -18,4 +18,24 @@ class transaction;
   constraint c1 {writeEnable != readEnable;}
   constraint c2 {rwAddr < 20;}
 
+  covergroup cg;
+    coverpoint readEnable {
+      bins all[] = {0,1};
+    }
+
+    coverpoint writeEnable {
+      bins all[] = {0,1};
+    }
+
+    coverpoint rwAddr {
+      bins lower_address = {[0:10]};
+      bins higher_address = {[11:19]};
+      illegal_bins remains = {[20:$]};
+    }
+  endgroup
+
+  function new();
+    cg = new();
+  endfunction: new
+
 endclass: transaction
