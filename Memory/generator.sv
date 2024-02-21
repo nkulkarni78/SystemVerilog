@@ -21,6 +21,7 @@ class generator;
     begin
       // randomize object and put in mailbox
       tr_obj.randomize();
+      tr_obj.cg.sample();
       gen_mbx.put(tr_obj);
       if(tr_obj.writeEnable == 1'b1)
         $display("[Time: %0t] [Generator]: Data randomized. Read?: %0b, \
