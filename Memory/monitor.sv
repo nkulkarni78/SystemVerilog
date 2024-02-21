@@ -40,4 +40,5 @@ Write?: %0b, Location: %0b", $time, tr_obj.readEnable,
       @(mon_mem_intf.cb);
     end
   endtask: run
+
 endclass: monitor
