@@ -1,0 +1,97 @@
+Group : $unit::transaction::cg
+
+===============================================================================
+Group : $unit::transaction::cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+100.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/home/grads/n/nikhilkulkarni2378/SystemVerilog/Memory/transaction.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   $unit::transaction::cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 6        0         6       100.00  
+
+
+Variables for Group  $unit::transaction::cg
+
+
+VARIABLE    EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+readEnable  2        0         2       100.00  100  1      1        0                    
+writeEnable 2        0         2       100.00  100  1      1        0                    
+rwAddr      2        0         2       100.00  100  1      1        0                    
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable readEnable
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for readEnable
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+all_0 6     1        
+all_1 14    1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable writeEnable
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for writeEnable
+
+
+Bins
+
+NAME  COUNT AT LEAST 
+all_0 14    1        
+all_1 6     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable rwAddr
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        0         2       100.00  
+
+
+User Defined Bins for rwAddr
+
+
+Excluded/Illegal bins
+
+NAME    COUNT STATUS  
+remains 0     Illegal 
+
+
+Covered bins
+
+NAME           COUNT AT LEAST 
+higher_address 10    1        
+lower_address  10    1        
+
+

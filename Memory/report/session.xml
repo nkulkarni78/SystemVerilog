@@ -1,0 +1,26 @@
+<session version="1.1" release="Q-2020.03-SP1-1" timestp="2024-02-21 21:51:25 GMT">
+  <info>
+    <attr name="datetime" value="Wed Feb 21 15:51:39 2024
+"/>
+    <attr name="command" value="urg -full64 -dir simv.vdb -report report -format both"/>
+  </info>
+  <hvp>
+    <datadef>
+      <metdef name="Group" type="percent" aggregator="average" builtin="1" />
+    </datadef>
+  </hvp>
+  <old_coverage>
+  <scope type="top" name="top">
+    <metric name="Group" value="100%" />
+  </scope>
+  <scope type="instance" name="top">
+  </scope>
+  <scope type="group" name="top">
+    <scope type="group" name="$unit::transaction::cg">
+      <metric name="Group" value="100%" />
+    </scope>
+  </scope>
+  <scope type="assert" name="Statistics">
+  </scope>
+  </old_coverage>
+</session>

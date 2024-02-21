@@ -1,0 +1,21 @@
+Dashboard
+
+Date: Wed Feb 21 15:51:39 2024
+
+User: nikhilkulkarni2378
+
+Version: Q-2020.03-SP1-1
+Command line: urg -full64 -dir simv.vdb -report report -format both
+Number of tests: 1
+
+-------------------------------------------------------------------------------
+Total Coverage Summary 
+SCORE  GROUP  
+100.00 100.00 
+
+
+-------------------------------------------------------------------------------
+Total Groups Coverage Summary 
+SCORE  WEIGHT 
+100.00 1      
+
